@@ -1,0 +1,6 @@
+[submodule "pip_abstractions"]
+	path = pip_abstractions
+	url = https://github.com/fbpsound/pip_abstractions.git
+[submodule "rjlib"]
+	path = rjlib
+	url = https://github.com/rjdj/rjlib.git
