@@ -1,0 +1,72 @@
+#N canvas 292 65 879 491 10;
+#X obj 115 31 inlet~;
+#X obj 76 338 throw~ sumL;
+#X obj 394 222 throw~ revsendL;
+#X obj 498 222 throw~ revsendR;
+#X obj 414 126 *~;
+#X obj 161 216 *~;
+#X text 498 31 Channel Strip with stereo lowpass filter and one send
+line for reverb or other send effects.;
+#X obj 646 128 *~;
+#X obj 626 224 throw~ rev2sendL;
+#X obj 730 224 throw~ rev2sendR;
+#N canvas 334 484 450 300 channelVU 0;
+#X obj 71 71 env~;
+#X obj 71 98 - 100;
+#X obj 71 44 inlet~;
+#X obj 71 136 s vu_\$1;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 0 0;
+#X restore 250 342 pd channelVU;
+#X obj 132 167 line~ \$1 5;
+#X obj 433 97 line~ \$1 5;
+#X obj 665 103 line~ \$1 5;
+#X obj 156 340 throw~ sumR;
+#X obj 31 187 e_lop2 10000 3;
+#X obj 32 165 line 25000 30;
+#X obj 8 121 scale 0 1 30 15000;
+#X obj 132 101 r vol_\$1;
+#X obj 430 56 r sendvol_\$1;
+#X obj 664 61 r send2vol_\$1;
+#X obj 23 47 r lp_\$1;
+#X obj 391 288 vsl 15 103 0 1 0 1 vol_\$1 vol_\$1 empty 0 -9 0 10 -262144
+-1 -1 1928 1;
+#X obj 417 302 vsl 22 41 0 0.9 0 1 sendvol_\$1 sendvol_\$1 Send1 0
+-9 0 10 -4034 -1 -1 0 1;
+#X obj 416 366 vsl 22 41 0 0.9 0 0 send2vol_\$1 send2vol_\$1 Send2
+0 -9 0 10 -4034 -1 -1 2300 1;
+#X obj 391 398 tgl 15 0 vol_\$1 vol_\$1 empty 17 7 0 10 -262144 -1
+-1 0.188976 0.188976;
+#X obj 371 288 vu 13 120 vu_\$1 empty -1 -8 0 10 -1 -1 0 0;
+#X obj 467 317 vsl 30 74 0.01 1 1 1 lp_\$1 lp_\$1 Low 0 -9 0 10 -262144
+-1 -1 7300 1;
+#X obj 132 126 clip 0 1;
+#X obj 23 74 clip 0 1;
+#X obj 432 76 clip 0 1;
+#X obj 665 81 clip 0 1;
+#X connect 0 0 15 0;
+#X connect 4 0 2 0;
+#X connect 4 0 3 0;
+#X connect 5 0 4 0;
+#X connect 5 0 7 0;
+#X connect 5 0 1 0;
+#X connect 5 0 14 0;
+#X connect 5 0 10 0;
+#X connect 7 0 8 0;
+#X connect 7 0 9 0;
+#X connect 11 0 5 1;
+#X connect 12 0 4 1;
+#X connect 13 0 7 1;
+#X connect 15 0 5 0;
+#X connect 16 0 15 1;
+#X connect 17 0 16 0;
+#X connect 18 0 28 0;
+#X connect 19 0 30 0;
+#X connect 20 0 31 0;
+#X connect 21 0 29 0;
+#X connect 28 0 11 0;
+#X connect 29 0 17 0;
+#X connect 30 0 12 0;
+#X connect 31 0 13 0;
+#X coords 0 -1 1 1 148 154 1 366 264;

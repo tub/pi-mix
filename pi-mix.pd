@@ -1,4 +1,4 @@
-#N canvas 219 -1057 1391 1012 10;
+#N canvas 0 23 1385 832 10;
 #X obj 367 320 outlet~ L;
 #X obj 427 320 outlet~ R;
 #X text 822 520 Place effects here;
@@ -41,8 +41,6 @@
 #X connect 2 0 13 0;
 #X connect 3 0 13 1;
 #X connect 4 0 14 0;
-#X connect 10 0 12 0;
-#X connect 11 0 12 1;
 #X connect 12 0 8 0;
 #X connect 12 1 9 0;
 #X connect 13 0 0 0;
@@ -116,7 +114,7 @@
 #X obj 816 20 adc~ 6;
 #X obj 658 56 pip_channel 5;
 #X obj 817 55 pip_channel 6;
-#N canvas 295 -820 1001 742 midi_in 1;
+#N canvas 295 22 1001 742 midi_in 1;
 #X obj 157 249 + 1;
 #X obj 193 471 s;
 #X msg 160 286 symbol vol_\$1;
@@ -184,10 +182,6 @@
 #X connect 14 0 28 1;
 #X connect 14 1 1 0;
 #X connect 14 1 32 0;
-#X connect 16 0 34 0;
-#X connect 17 0 35 0;
-#X connect 18 0 36 0;
-#X connect 19 0 37 0;
 #X connect 22 0 23 0;
 #X connect 23 0 24 0;
 #X connect 25 0 27 1;
@@ -195,13 +189,9 @@
 #X connect 26 0 20 0;
 #X connect 26 0 22 0;
 #X connect 27 0 20 1;
-#X connect 28 0 26 0;
 #X connect 29 0 31 0;
 #X connect 30 0 28 0;
 #X connect 30 0 32 1;
 #X connect 31 0 30 0;
-#X connect 32 0 27 0;
 #X connect 38 0 29 0;
 #X connect 39 0 40 0;
-#X connect 41 0 43 0;
-#X connect 42 0 44 0;
